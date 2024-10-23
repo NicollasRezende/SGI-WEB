@@ -1,0 +1,252 @@
+:root {
+    --primary-100: #2a9d8f;
+    --primary-200: #35c5b4;
+    --primary-300: #5ad3c4;
+    --accent-100: #ff9b55;
+    --accent-200: #ff9b55;
+    --accent-300: #ff9b55;
+    --background-100: #081e1b;
+    --background-200: #0d322d;
+    --background-300: #13463f;
+    --text-100: #fdfefd;
+    --text-200: #ecf5ec;
+    --text-300: #dbeddb;
+    --placeholder-color: #b0e0e6;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-100);
+    color: var(--text-100);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: var(--primary-100);
+    padding: 20px;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: var(--text-100);
+}
+
+.product-form,
+.product-table {
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--background-200);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-form input {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-300);
+    color: var(--text-100);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-form input:focus {
+    outline: none;
+    background-color: var(--primary-200);
+}
+
+.product-form input[type='submit'] {
+    background-color: var(--accent-100);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-form input[type='submit']:hover {
+    background-color: var(--accent-200);
+    transform: translateY(-2px);
+}
+
+.product-table {
+    margin-top: 20px;
+}
+
+.product-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+    padding: 10px;
+    border: 1px solid var(--text-300);
+    text-align: center;
+}
+
+.product-table th {
+    background-color: var(--background-300);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--background-200);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-200);
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: var(--accent-100);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--accent-200);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-300);
+    color: var(--text-100);
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    background-color: var(--primary-200);
+}
+
+.modal-content button {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--accent-100);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+    background-color: var(--accent-200);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .product-form,
+    .product-table {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .product-form form,
+    .modal-content form {
+        flex-direction: column;
+    }
+
+    .product-form input,
+    .modal-content input,
+    .modal-content textarea {
+        width: 100%;
+    }
+
+    .product-table table {
+        font-size: 0.9rem;
+    }
+}
+
+button.remove,
+button.update {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: var(--text-100);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+button.update {
+    background-color: var(--primary-200);
+}
+
+button.update:hover {
+    background-color: var(--primary-300);
+    transform: translateY(-2px);
+}
+
+button.remove {
+    background-color: var(--accent-100);
+}
+
+button.remove:hover {
+    background-color: var(--accent-200);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    button.remove,
+    button.update {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.nav-button {
+    padding: 5px 10px;
+    background-color: var(--background-100);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+    background-color: var(--accent-200);
+    transform: scale(1.05);
+}

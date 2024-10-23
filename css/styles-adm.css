@@ -1,0 +1,276 @@
+:root {
+    --primary-100: #2a9d8f;
+    --primary-200: #35c5b4;
+    --primary-300: #5ad3c4;
+    --accent-100: #ff9b55;
+    --accent-200: #ff9b55;
+    --background-100: #081e1b;
+    --background-200: #0d322d;
+    --background-300: #13463f;
+    --text-100: #fdfefd;
+    --text-200: #ecf5ec;
+    --text-300: #dbeddb;
+    --placeholder-color: #b0e0e6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-100);
+    color: var(--text-100);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--background-200);
+    color: var(--text-100);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.nav-button {
+    padding: 10px 15px;
+    background-color: var(--primary-100);
+    color: var(--text-100);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-200);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    nav {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .nav-button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+.user-form {
+    background-color: var(--background-200);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.user-form input,
+.user-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--text-300);
+    border-radius: 5px;
+    background-color: var(--background-300);
+    color: var(--text-100);
+    box-sizing: border-box;
+}
+
+.user-form input::placeholder,
+.user-form select::placeholder {
+    color: var(--placeholder-color);
+}
+
+.user-form input[type='submit'] {
+    background-color: var(--accent-100);
+    color: var(--text-100);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    padding: 12px;
+    width: 100%;
+}
+
+.user-form input[type='submit']:hover {
+    background-color: var(--accent-200);
+}
+
+@media (max-width: 768px) {
+    .user-form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .user-form input,
+    .user-form select {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .user-form input,
+    .user-form select {
+        padding: 10px;
+    }
+}
+
+.user-table {
+    width: 90%;
+    margin: 20px auto;
+    background-color: var(--background-200);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-table h2 {
+    margin-bottom: 15px;
+    color: var(--text-200);
+    font-size: 1.5rem;
+}
+
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--background-300);
+    color: var(--text-100);
+}
+
+.user-table th {
+    background-color: var(--primary-100);
+    color: var(--text-100);
+    font-size: 1rem;
+}
+
+.user-table td {
+    background-color: var(--background-300);
+}
+
+.user-table tr:hover {
+    background-color: var(--background-200);
+}
+
+.user-table button {
+    padding: 8px 12px;
+    background-color: var(--primary-100);
+    color: var(--text-100);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.user-table button:hover {
+    background-color: var(--primary-200);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--background-300);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    color: var(--text-100);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--text-200);
+    font-size: 1.5rem;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--text-300);
+    border-radius: 5px;
+    background-color: var(--background-300);
+    color: var(--text-100);
+}
+
+.modal-content button {
+    background-color: var(--accent-100);
+    color: var(--text-100);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal-content button:hover {
+    background-color: var(--accent-200);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-100);
+}
+
+@media (max-width: 768px) {
+    .user-form,
+    .modal-content,
+    .user-table {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .user-table th,
+    .user-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

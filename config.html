@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Administração de Usuários</title>
+        <link rel="stylesheet" href="css/styles-adm.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Administração de Usuários</h1>
+            <nav>
+                <button
+                    onclick="window.location.href='index.html'"
+                    class="nav-button"
+                >
+                    Voltar
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="user-form">
+                <h2>Adicionar Usuário</h2>
+                <form id="add-user-form" onsubmit="addUser(event)">
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Nome de Usuário"
+                        required
+                    />
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Senha"
+                        required
+                    />
+                    <select id="user-role" required>
+                        <option value="comum">Comum</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <input type="submit" value="Adicionar Usuário" />
+                </form>
+            </section>
+
+            <section class="user-table">
+                <h2>Lista de Usuários</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome de Usuário</th>
+                            <th>Tipo de Usuário</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list">
+                        <!--Usuarios aqui-->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <div id="updateModal" class="modal" style="display: none">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Atualizar Usuário</h2>
+                <form id="updateForm">
+                    <input type="hidden" id="update-id" name="id" value="" />
+                    <input
+                        type="text"
+                        id="update-username"
+                        name="username"
+                        required
+                    />
+                    <input
+                        type="password"
+                        id="update-password"
+                        name="password"
+                        required
+                    />
+                    <select id="user-role" required>
+                        <option value="comum">Comum</option>
+                        <option value="admin">Admin</option>
+                    </select>
+
+                    <button type="submit">Atualizar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Gerenciamento de Usuários</p>
+        </footer>
+
+        <script src="js/scripts-adm.js"></script>
+    </body>
+</html>

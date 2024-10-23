@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/styles-login.css" />
+        <title>Login</title>
+    </head>
+    <body>
+        <main>
+            <nav>
+                <h1>Sistema de Gerenciamento de Inventário</h1>
+            </nav>
+            <section class="card-login">
+                <div class="card">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Usuário"
+                            required
+                        />
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Senha"
+                            required
+                        />
+                        <input type="submit" value="Confirmar" />
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            document
+                .getElementById('loginForm')
+                .addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+
+                    const response = await fetch('/api/users/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ username, password }),
+                    });
+
+                    if (response.ok) {
+                        window.location.href = 'index.html';
+                    } else {
+                        alert('Usuário ou senha incorretos.');
+                    }
+                });
+        </script>
+    </body>
+</html>
