@@ -241,7 +241,8 @@ O front-end do sistema foi implementado em **HTML**, **CSS**, e **JavaScript**. 
    ```bash
    npm install
    ```
-3. Configure o banco de dados PostgreSQL.
+3. Configure o banco de dados PostgreSQL.(Ou pule isso e inicie o serviço normalmente caso não tenha um DB configurado)
+   
 4. Inicie o servidor local:
    ```bash
    npm start
